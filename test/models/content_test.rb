@@ -10,4 +10,16 @@ describe "Content Model" do
     assert_association Content, :belongs_to, :account
   end
   
+  it "should validate presence of path" do
+    assert_validates_presence_of Content, :path
+  end
+  
+  it "should validate presence of title" do
+    assert_validates_presence_of Content, :title
+  end
+  
+  it "should validate presence of body" do
+    assert_validates_presence_of Content, :body
+  end
+  
 end
