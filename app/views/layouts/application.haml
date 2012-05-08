@@ -1,14 +1,14 @@
 !!! Strict
 %html
   %head
-    %title= [@title, "Simple Padrino CMS"].compact.join(" | ")
+    %title= [@title, "Laing Solutions"].compact.join(" | ")
     = stylesheet_link_tag 'reset', 'application'
     = yield_content :include
   %body
     #wrap
       #header
-        %h1 Padrino CMS
+        %h1.logo Laing Solutions
       #content
         = yield
       #footer
-        Copyright (c) 2009-2010 Padrino
+        Copyright (c) 2009-2010 Laing Solutions

@@ -3,6 +3,5 @@
 :test: minitest
 :mock: none
 :script: jquery
-:renderer: haml
-:stylesheet: less
-:admin_renderer: haml
+:renderer: erb
+:admin_renderer: erb

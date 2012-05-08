@@ -10,9 +10,7 @@ gem 'sinatra-flash', :require => 'sinatra/flash'
 
 # Component requirements
 gem 'bcrypt-ruby', :require => "bcrypt"
-gem 'rack-less'
-gem 'less'
-gem 'haml'
+gem 'erubis'
 gem 'activerecord', :require => "active_record"
 gem 'sqlite3'
 

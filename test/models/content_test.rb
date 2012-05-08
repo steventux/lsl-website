@@ -5,4 +5,9 @@ describe "Content Model" do
     @content = Content.new
     refute_nil @content
   end
+  
+  it "should belong to an account" do
+    assert_association Content, :belongs_to, :account
+  end
+  
 end
