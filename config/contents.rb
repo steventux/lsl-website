@@ -1,2 +1,6 @@
-Padrino::CMS::ContentTypes = [ :article, :component, :index ]
-Padrino::CMS::ContentStatuses = [ :draft, :published, :archived ]
+module Padrino
+  module CMS
+    ContentTypes = [ :article, :component, :free_text, :index ]
+    ContentStatuses = [ :draft, :published, :archived ]
+  end
+end

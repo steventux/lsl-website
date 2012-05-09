@@ -22,4 +22,12 @@ describe "Content Model" do
     assert_validates_presence_of Content, :body
   end
   
+  it "should validate presence of content_type" do
+    assert_validates_presence_of Content, :content_type
+  end
+  
+  it "should validate presence of status" do
+    assert_validates_presence_of Content, :status
+  end
+  
 end

@@ -7,6 +7,8 @@ require 'rubygems' unless defined?(Gem)
 require 'bundler/setup'
 Bundler.require(:default, PADRINO_ENV)
 
+require File.expand_path('../contents', __FILE__)
+
 ##
 # Enable devel logging
 #
