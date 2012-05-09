@@ -19,6 +19,10 @@
   <%= f.text_area :body, :class => :text_area %>
 </div>
 <div class="group">
+  <%= f.label :type %><%= f.error_message_on :status %>
+  <%= f.select :content_type, :options => Padrino::CMS::ContentTypes %>
+</div>
+<div class="group">
   <%= f.label :status %><%= f.error_message_on :status %>
   <%= f.select :status, :options => Padrino::CMS::ContentStatuses %>
 </div>
