@@ -5,12 +5,13 @@ Laingsolutions.controllers :contents do
     render 'contents/index'
   end
 
-  get :show do
+  get :show, :with => :id do
     @content = Content.find_by_id(params[:id])
     render 'contents/show'
   end
   
   get :show, :with => :path, :provides => :json do
+    debugger
     @contents = Content.where(:path => "/#{params[:path]}")
     @content = @contents.first
     render "contents/show"

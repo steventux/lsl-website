@@ -26,6 +26,11 @@ gem 'debugger'
 
 # Test requirements
 group "test" do
+  gem 'blueprints'
+  gem 'database_cleaner'
+  gem 'mocha'
+  gem 'faker'
+  gem 'machinist'
   gem 'minitest', "~>2.6.0", :require => "minitest/autorun"
   gem 'rack-test', :require => "rack/test"
   gem 'jasmine'
