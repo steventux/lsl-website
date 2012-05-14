@@ -11,7 +11,6 @@ Laingsolutions.controllers :contents do
   end
   
   get :show, :with => :path, :provides => :json do
-    debugger
     @contents = Content.where(:path => "/#{params[:path]}")
     @content = @contents.first
     render "contents/show"
