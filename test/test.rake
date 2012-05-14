@@ -1,4 +1,6 @@
 require 'rake/testtask'
+require 'jasmine'
+load 'jasmine/tasks/jasmine.rake'
 
 test_tasks = Dir['test/*/'].map { |d| File.basename(d) }
 
@@ -10,4 +12,4 @@ test_tasks.each do |folder|
 end
 
 desc "Run application test suite"
-task 'test' => test_tasks.map { |f| "test:#{f}" }
+task 'test' => test_tasks.map { |f| "test:#{f}" }.push("jasmine:ci")

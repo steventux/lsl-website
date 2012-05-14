@@ -20,21 +20,10 @@ class Laingsolutions < Padrino::Application
     render "sitemap"
   end
   
-  get "/home", :priority => :low do
-    @contents = Content.where(:path => "/")
+  get "/*path", :priority => :low do
+    @contents = Content.where(:path => "/#{params[:path]}")
     render "main"
   end
-  
-  get "/about", :priority => :low do
-    @contents = Content.where(:path => "/")
-    render "main"
-  end
-  
-#  get "/*path", :priority => :low do
-#    @contents = Content.where(:path => get_path(request))
-#    render "main"
-#  end
-#  
   
   ##
   # Caching support
