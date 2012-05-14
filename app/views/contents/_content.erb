@@ -3,6 +3,6 @@
   <div class="date"><%= time_ago_in_words(content.created_at || Time.now) + ' ago' %></div>
   <div class="body"><%= simple_format(content.body) %></div>
   <div class="details">
-    <div class="author">Posted by <%= content.account.email %></div>
+    <div class="author">Posted by <%= content.account.nil? ? "Anonymous" : content.account.email %></div>
   </div>
 </div>

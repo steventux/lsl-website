@@ -30,4 +30,8 @@ describe "Content Model" do
     assert_validates_presence_of Content, :status
   end
   
+  it "should validate uniqueness of path" do
+    assert_validates_uniqueness_of Content, :path
+  end
+  
 end

@@ -23,28 +23,11 @@ module CmsUtils
     value
   end
 
-  def default_path request
-    self.class.default_path request
-  end
-
-  # Returns the default key for the current request, this will be
-  # request.route.path if present otherwise request.path
-  #
-  def self.default_path request
-    raise "Unable to access current request." if request.nil?
-
-    if request.respond_to? 'route' and request.route.is_a? HttpRouter::Route
-      request.route.path
-    else
-      request.path_info
-    end
+  def get_path request
+    request.params[:path].nil? ? request.path_info : request.params[:path]  
   end
 
   def current_account session_id
-    self.class current_account session_id
-  end
-
-  def self.current_account session_id
     @current_account = Account.find_by_id(session_id) if defined?(Account)
   end
 

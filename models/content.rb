@@ -5,5 +5,6 @@ class Content < ActiveRecord::Base
   validates_presence_of :body
   validates_presence_of :content_type
   validates_presence_of :status
+  validates_uniqueness_of :path
 
 end

@@ -4,11 +4,15 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title><%= [@title, "Laing Solutions"].compact.join(" | ") %></title>
   <%= stylesheet_link_tag 'reset', 'application' %>
+  <script data-main="/javascripts/main" src="/javascripts/libs/require/require.js"></script>
 </head>
 <body>
   <div id="wrap">
     <div id="header">
       <h1>Laing Solutions</h1>
+    </div>
+    <div id="navigation">
+      <%= partial "shared/navigation" %>
     </div>
     <div id="content">
       <%= yield %>

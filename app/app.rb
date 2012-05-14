@@ -3,14 +3,15 @@ class Laingsolutions < Padrino::Application
   register Padrino::Rendering
   register Padrino::Mailer
   register Padrino::Helpers
+  
+  include CmsUtils
 
   enable :sessions
 
   set :session_id, :_padrino_cms_session_id
 
   before do
-    @current_account = CmsUtils.current_account(session[settings.session_id])
-    @contents = Content.where(:path => CmsUtils.default_path(request))
+    @current_account = current_account(session[settings.session_id])
   end
 
   get "/sitemap", :provides => [:html, :xml] do
@@ -19,14 +20,22 @@ class Laingsolutions < Padrino::Application
     render "sitemap"
   end
   
-  # IMPORTANT That this route is the last in the app as :priority => :low does not seem to do what I expected.
-  # Maybe I just need to RTFM again.
-  #
-  get "/*path", :priority => :low do
+  get "/home", :priority => :low do
+    @contents = Content.where(:path => "/")
     render "main"
   end
-
-
+  
+  get "/about", :priority => :low do
+    @contents = Content.where(:path => "/")
+    render "main"
+  end
+  
+#  get "/*path", :priority => :low do
+#    @contents = Content.where(:path => get_path(request))
+#    render "main"
+#  end
+#  
+  
   ##
   # Caching support
   #

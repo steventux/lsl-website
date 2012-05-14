@@ -20,10 +20,18 @@ gem 'mini_magick'
 gem 'fog'
 
 
+gem 'debugger'
+
+
+
 # Test requirements
-gem 'minitest', "~>2.6.0", :require => "minitest/autorun", :group => "test"
-gem 'rack-test', :require => "rack/test", :group => "test"
-gem 'jasmine', :group => "test"
+group "test" do
+  gem 'minitest', "~>2.6.0", :require => "minitest/autorun"
+  gem 'rack-test', :require => "rack/test"
+  gem 'jasmine'
+end
+
+
 
 # Padrino Stable Gem
 gem 'padrino', '0.10.6'
