@@ -31,19 +31,19 @@ describe "ContentsController" do
   
   end
   
-#  describe "GET to show with path" do
-#  
-#    before do
-#      @content = Content.make!
-#      debugger
-#      get "/contents/show#{@content.path}"
-#    end
+  describe "GET to show with path" do
+  
+    before do
+      @content = Content.make!
+      debugger
+      get "/contents/show#{@content.path}"
+    end
 
-#    it "should display the specified content" do
-#      debugger
-#      assert_match @content.title, last_response.body
-#    end
-#  
-#  end
+    it "should display the specified content" do
+      debugger
+      assert_match @content.title, last_response.body
+    end
+  
+  end
   
 end
